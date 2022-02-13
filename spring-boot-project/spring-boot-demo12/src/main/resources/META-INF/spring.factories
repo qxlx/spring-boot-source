@@ -1,0 +1,4 @@
+org.springframework.context.ApplicationListener=\
+com.bobo.demo.listener.MySpringApplicationListener,\
+com.bobo.demo.listener.MySpringApplicationStartingListener,\
+com.bobo.demo.listener.MyCustomerEventListener
