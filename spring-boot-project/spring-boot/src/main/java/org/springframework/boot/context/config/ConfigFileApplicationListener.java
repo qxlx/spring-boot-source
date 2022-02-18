@@ -109,6 +109,7 @@ public class ConfigFileApplicationListener implements EnvironmentPostProcessor, 
 	// Note the order is from least to most specific (last one wins)
 	private static final String DEFAULT_SEARCH_LOCATIONS = "classpath:/,classpath:/config/,file:./,file:./config/";
 
+	// 默认的属性文件的名称
 	private static final String DEFAULT_NAMES = "application";
 
 	private static final Set<String> NO_SEARCH_NAMES = Collections.singleton(null);
@@ -138,6 +139,7 @@ public class ConfigFileApplicationListener implements EnvironmentPostProcessor, 
 
 	/**
 	 * The "config name" property name.
+	 * 可以自定义属性文件的名称-并不一定是application
 	 */
 	public static final String CONFIG_NAME_PROPERTY = "spring.config.name";
 
@@ -170,6 +172,10 @@ public class ConfigFileApplicationListener implements EnvironmentPostProcessor, 
 				|| ApplicationPreparedEvent.class.isAssignableFrom(eventType);
 	}
 
+	/**
+	 * 默认的是监听所有的事件
+	 * @param event
+	 */
 	@Override
 	public void onApplicationEvent(ApplicationEvent event) {
 		// 如果是 ApplicationEnvironmentPreparedEvent则处理
@@ -187,6 +193,7 @@ public class ConfigFileApplicationListener implements EnvironmentPostProcessor, 
 		List<EnvironmentPostProcessor> postProcessors = loadPostProcessors();
 		// 添加自身即 ConfigFileApplicationListener 为后置处理器
 		postProcessors.add(this);
+		// 原来有4个 现在加了一个需要重新排序
 		AnnotationAwareOrderComparator.sort(postProcessors);
 		for (EnvironmentPostProcessor postProcessor : postProcessors) {
 			// 系统提供那4个不是重点，重点是 ConfigFileApplicationListener 中的这个方法处理
@@ -198,6 +205,11 @@ public class ConfigFileApplicationListener implements EnvironmentPostProcessor, 
 		return SpringFactoriesLoader.loadFactories(EnvironmentPostProcessor.class, getClass().getClassLoader());
 	}
 
+	/**
+	 * 这个是 EnvironmentPostProcessor 接口定义的抽象方法
+	 * @param environment the environment to post-process
+	 * @param application the application to which the environment belongs
+	 */
 	@Override
 	public void postProcessEnvironment(ConfigurableEnvironment environment, SpringApplication application) {
 		// 单个方法直接进入
@@ -216,8 +228,9 @@ public class ConfigFileApplicationListener implements EnvironmentPostProcessor, 
 	 * @see #addPostProcessors(ConfigurableApplicationContext)
 	 */
 	protected void addPropertySources(ConfigurableEnvironment environment, ResourceLoader resourceLoader) {
+		// 处理我们在属性文件中配置的 ${random.value} ${random.long} ${random.uuid}
 		RandomValuePropertySource.addToEnvironment(environment);
-		// 创建Loader对象同时会完成属性加载器的加载 同时调用load方法
+		// 创建Loader对象同时会完成属性加载器的加载 同时调用load方法  boge_java
 		new Loader(environment, resourceLoader).load();
 	}
 

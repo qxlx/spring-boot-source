@@ -379,16 +379,20 @@ public class SpringApplication {
 	private ConfigurableEnvironment prepareEnvironment(SpringApplicationRunListeners listeners,
 			ApplicationArguments applicationArguments) {
 		// Create and configure the environment
+		// 创建并且配置 Environment
 		ConfigurableEnvironment environment = getOrCreateEnvironment();
+		// 配置PropertySources和activeProfiles
 		configureEnvironment(environment, applicationArguments.getSourceArgs());
 		ConfigurationPropertySources.attach(environment);
 		// 在配置环境信息之前发布事件
 		listeners.environmentPrepared(environment);
+		// 把相关的配置信息绑定到Spring容器中
 		bindToSpringApplication(environment);
 		if (!this.isCustomEnvironment) {
 			environment = new EnvironmentConverter(getClassLoader()).convertEnvironmentIfNecessary(environment,
 					deduceEnvironmentClass());
 		}
+		// 配置PropertySources对它自己的递归依赖
 		ConfigurationPropertySources.attach(environment);
 		return environment;
 	}
@@ -1267,7 +1271,7 @@ public class SpringApplication {
 	}
 
 	/**
-	 * 添加相关的注释--波波烤鸭  获取资料技术支持加V：boge_java
+	 * 添加相关的注释--波波烤鸭  获取资料技术支持加V：boge_java 1
 	 * Static helper that can be used to run a {@link SpringApplication} from the
 	 * specified source using default settings. 666
 	 * 再次修改了代码

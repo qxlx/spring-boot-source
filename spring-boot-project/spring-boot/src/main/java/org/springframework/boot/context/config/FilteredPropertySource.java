@@ -50,7 +50,7 @@ class FilteredPropertySource extends PropertySource<PropertySource<?>> {
 			Consumer<PropertySource<?>> operation) {
 		// 获取当前环境下的所有的资源加载器
 		MutablePropertySources propertySources = environment.getPropertySources();
-		// 根据propertySourceName从众多的加载器中获取对应的加载器 默认的没有
+		// 根据propertySourceName从众多的加载器中获取对应的加载器 默认的没有 defaultProperties
 		PropertySource<?> original = propertySources.get(propertySourceName);
 		if (original == null) {
 			operation.accept(null);
