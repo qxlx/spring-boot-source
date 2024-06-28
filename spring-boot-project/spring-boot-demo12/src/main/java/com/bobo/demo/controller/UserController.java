@@ -1,6 +1,5 @@
 package com.bobo.demo.controller;
 
-import com.bobo.demo.event.MyEvent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
