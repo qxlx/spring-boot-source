@@ -94,6 +94,7 @@ public class ApplicationConversionService extends FormattingConversionService {
 	 * ConversionService
 	 */
 	public static void configure(FormatterRegistry registry) {
+		// 转换器
 		DefaultConversionService.addDefaultConverters(registry);
 		DefaultFormattingConversionService.addDefaultFormatters(registry);
 		addApplicationFormatters(registry);

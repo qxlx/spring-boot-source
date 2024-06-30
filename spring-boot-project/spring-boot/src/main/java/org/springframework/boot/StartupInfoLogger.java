@@ -62,6 +62,7 @@ class StartupInfoLogger {
 		}
 	}
 
+	// 启动信息
 	private CharSequence getStartingMessage() {
 		StringBuilder message = new StringBuilder();
 		message.append("Starting ");

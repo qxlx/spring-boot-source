@@ -69,8 +69,11 @@ public class AnnotationConfigServletWebServerApplicationContext extends ServletW
 	 * to be populated through {@link #register} calls and then manually
 	 * {@linkplain #refresh refreshed}.
 	 */
+	// 在实例化的时候 调用构造方法 创建两个对象 reader和scanner
 	public AnnotationConfigServletWebServerApplicationContext() {
+		//
 		this.reader = new AnnotatedBeanDefinitionReader(this);
+		//
 		this.scanner = new ClassPathBeanDefinitionScanner(this);
 	}
 

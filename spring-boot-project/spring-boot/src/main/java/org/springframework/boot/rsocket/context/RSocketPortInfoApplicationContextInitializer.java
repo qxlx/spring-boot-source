@@ -48,6 +48,7 @@ public class RSocketPortInfoApplicationContextInitializer
 
 	@Override
 	public void initialize(ConfigurableApplicationContext applicationContext) {
+		// 添加一个listener
 		applicationContext.addApplicationListener(new Listener(applicationContext));
 	}
 

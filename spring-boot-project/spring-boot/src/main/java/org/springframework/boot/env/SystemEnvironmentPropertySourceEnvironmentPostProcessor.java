@@ -51,6 +51,7 @@ public class SystemEnvironmentPropertySourceEnvironmentPostProcessor implements 
 		String sourceName = StandardEnvironment.SYSTEM_ENVIRONMENT_PROPERTY_SOURCE_NAME;
 		PropertySource<?> propertySource = environment.getPropertySources().get(sourceName);
 		if (propertySource != null) {
+			// 替换工作
 			replacePropertySource(environment, sourceName, propertySource);
 		}
 	}

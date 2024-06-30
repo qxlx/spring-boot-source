@@ -51,8 +51,10 @@ class SharedMetadataReaderFactoryContextInitializer
 	public static final String BEAN_NAME = "org.springframework.boot.autoconfigure."
 			+ "internalCachingMetadataReaderFactory";
 
+	// metadata 元数据
 	@Override
 	public void initialize(ConfigurableApplicationContext applicationContext) {
+		// 给IOC里加入BFPP 刷新的时候会进行处理 CachingMetadataReaderFactoryPostProcessor 类
 		applicationContext.addBeanFactoryPostProcessor(new CachingMetadataReaderFactoryPostProcessor());
 	}
 

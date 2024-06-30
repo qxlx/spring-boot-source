@@ -201,6 +201,7 @@ public class ConfigFileApplicationListener implements EnvironmentPostProcessor, 
 		}
 	}
 
+	// 从spring.factprus加载 EnvironmentPostProcessor
 	List<EnvironmentPostProcessor> loadPostProcessors() {
 		return SpringFactoriesLoader.loadFactories(EnvironmentPostProcessor.class, getClass().getClassLoader());
 	}
@@ -218,6 +219,7 @@ public class ConfigFileApplicationListener implements EnvironmentPostProcessor, 
 
 	private void onApplicationPreparedEvent(ApplicationEvent event) {
 		this.logger.switchTo(ConfigFileApplicationListener.class);
+		// 添加到 PropertySourceOrderingPostProcessor BFPP 资源排序功能
 		addPostProcessors(((ApplicationPreparedEvent) event).getApplicationContext());
 	}
 

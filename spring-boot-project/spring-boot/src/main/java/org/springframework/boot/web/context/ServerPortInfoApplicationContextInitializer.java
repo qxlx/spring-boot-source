@@ -54,6 +54,7 @@ public class ServerPortInfoApplicationContextInitializer implements
 
 	@Override
 	public void initialize(ConfigurableApplicationContext applicationContext) {
+		// 把当前加入到listsner
 		applicationContext.addApplicationListener(this);
 	}
 
