@@ -85,7 +85,7 @@ public class TomcatWebServer implements WebServer {
 		Assert.notNull(tomcat, "Tomcat Server must not be null");
 		this.tomcat = tomcat;
 		this.autoStart = autoStart;
-		initialize(); // 非常重要的初始化方法
+		initialize(); // 非常重要的初始化方法 ⭐️
 	}
 
 	private void initialize() throws WebServerException {
@@ -95,6 +95,7 @@ public class TomcatWebServer implements WebServer {
 				addInstanceIdToEngineName();
 
 				Context context = findContext();
+				// 生命周期
 				context.addLifecycleListener((event) -> {
 					if (context.equals(event.getSource()) && Lifecycle.START_EVENT.equals(event.getType())) {
 						// Remove service connectors so that protocol binding doesn't

@@ -179,9 +179,13 @@ public class TomcatServletWebServerFactory extends AbstractServletWebServerFacto
 		tomcat.setBaseDir(baseDir.getAbsolutePath());
 		Connector connector = new Connector(this.protocol);// 创建连接器
 		connector.setThrowOnFailure(true);
+		// 给service添加connector
 		tomcat.getService().addConnector(connector);
+		// 定制自己的连接器
 		customizeConnector(connector);
+		// 设置到tomcat中
 		tomcat.setConnector(connector);
+		// 自动部署 false
 		tomcat.getHost().setAutoDeploy(false);
 		configureEngine(tomcat.getEngine()); // 配置Engine
 		for (Connector additionalConnector : this.additionalTomcatConnectors) {
@@ -300,6 +304,7 @@ public class TomcatServletWebServerFactory extends AbstractServletWebServerFacto
 	// Needs to be protected so it can be used by subclasses
 	protected void customizeConnector(Connector connector) {
 		int port = Math.max(getPort(), 0);
+		// 设置端口
 		connector.setPort(port);
 		if (StringUtils.hasText(this.getServerHeader())) {
 			connector.setAttribute("server", this.getServerHeader());
