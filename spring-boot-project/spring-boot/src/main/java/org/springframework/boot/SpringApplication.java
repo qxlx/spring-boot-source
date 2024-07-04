@@ -158,6 +158,7 @@ import org.springframework.web.context.support.StandardServletEnvironment;
  * @see #run(Class[], String[])
  * @see #SpringApplication(Class...)
  */
+// springBoot启动类 run方法主药启动程序 创建并且刷新spring容器
 public class SpringApplication {
 
 	/**
