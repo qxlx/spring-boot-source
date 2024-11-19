@@ -1,4 +1,4 @@
-package org.qxlx.application;
+package com.qxlx.application;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
  * @date 2024/11/18 21:56
  */
 @Configuration
-@ComponentScan(basePackages = "org.qxlx.application")
+@ComponentScan(basePackages = "com.qxlx.application")
 public class AppConfig {
 
 }
