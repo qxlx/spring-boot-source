@@ -1,8 +1,7 @@
-package org.qxlx.application;
-
 import org.junit.jupiter.api.Test;
+import org.qxlx.application.AppConfig;
+import org.qxlx.application.Person;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 
 /**
@@ -12,7 +11,7 @@ import org.springframework.util.Assert;
 public class Test1 {
 
     @Test
-    public void test2 () {
+    public void testGetPerson () {
         AnnotationConfigApplicationContext ioc = new AnnotationConfigApplicationContext(AppConfig.class);
         Person bean = ioc.getBean(Person.class);
         Assert.notNull(bean);
