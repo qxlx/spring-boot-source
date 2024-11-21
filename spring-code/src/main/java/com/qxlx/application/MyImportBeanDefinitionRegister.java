@@ -1,9 +1,7 @@
-package org.qxlx.application;
+package com.qxlx.application;
 
 import org.springframework.beans.factory.config.BeanDefinition;
-import org.springframework.beans.factory.support.BeanDefinitionReader;
-import org.springframework.beans.factory.support.BeanDefinitionRegistry;
-import org.springframework.beans.factory.support.GenericBeanDefinition;
+import org.springframework.beans.factory.support.*;
 import org.springframework.context.annotation.ImportBeanDefinitionRegistrar;
 import org.springframework.core.type.AnnotationMetadata;
 
@@ -15,6 +13,8 @@ public class MyImportBeanDefinitionRegister implements ImportBeanDefinitionRegis
 
     @Override
     public void registerBeanDefinitions(AnnotationMetadata importingClassMetadata, BeanDefinitionRegistry registry) {
+        BeanDefinitionBuilder beanDefinitionBuilder = BeanDefinitionBuilder.genericBeanDefinition();
+        AbstractBeanDefinition beanDefinition = beanDefinitionBuilder.getBeanDefinition();
 //        BeanDefinition beanDefinition = new GenericBeanDefinition();
 //        registry.registerBeanDefinition("coder", new Coder());
     }

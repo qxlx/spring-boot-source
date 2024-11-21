@@ -1,4 +1,4 @@
-package org.qxlx.application;
+package com.qxlx.application;
 
 /**
  * @author qxlx

@@ -1,4 +1,4 @@
-package org.qxlx.application;
+package com.qxlx.application;
 
 import org.springframework.context.annotation.ImportSelector;
 import org.springframework.core.type.AnnotationMetadata;
