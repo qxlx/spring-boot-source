@@ -4,24 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="636868fe-9a02-48b9-8386-a12783526356" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qxlx/application/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qxlx/springmybatis/AppConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qxlx/springmybatis/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qxlx/springmybatis/MyFactoryBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qxlx/springmybatis/MyImportRegister.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qxlx/springmybatis/UserDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qxlx/springmybatis/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qxlx/springmybatis/UserServiceImpl.java" afterDir="false" />
+    <list default="true" id="636868fe-9a02-48b9-8386-a12783526356" name="Changes" comment="spring">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qxlx/clactime/ApiTimeMap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qxlx/clactime/AppConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qxlx/clactime/SpringApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qxlx/clactime/TimeAspect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qxlx/clactime/TimeHolder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qxlx/clactime/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/qxlx/clactime/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/qxlx/application/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qxlx/application/AppConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/qxlx/application/Coder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qxlx/application/Coder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/qxlx/application/MyImportBeanDefinitionRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qxlx/application/MyImportBeanDefinitionRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/qxlx/application/MyImportSelector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qxlx/application/MyImportSelector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/qxlx/application/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qxlx/application/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/qxlx/application/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Test1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Test1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/qxlx/application/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/qxlx/application/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/qxlx/application/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qxlx/application/AppConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/qxlx/application/AppConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/qxlx/application/MyImportSelector.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/qxlx/application/Person.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/qxlx/application/User.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +67,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Main.executor": "Debug",
+    "Application.SpringApplication.executor": "Run",
     "JUnit.Test1.test2.executor": "Run",
     "JUnit.Test1.test3.executor": "Debug",
     "JUnit.Test1.testBd.executor": "Debug",
@@ -99,7 +96,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.SpringApplication">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.qxlx.springmybatis.Main" />
       <module name="spring-code" />
@@ -113,18 +110,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test1.test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SpringApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.qxlx.clactime.SpringApplication" />
       <module name="spring-code" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value=".*" />
+          <option name="PATTERN" value="com.qxlx.clactime.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="Test1" />
-      <option name="METHOD_NAME" value="test2" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -173,11 +167,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SpringApplication" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.Test1.test3" />
         <item itemvalue="JUnit.Test1.testBd" />
         <item itemvalue="JUnit.Test1.testGetPerson" />
-        <item itemvalue="JUnit.Test1.test2" />
       </list>
     </recent_temporary>
   </component>
@@ -198,8 +192,18 @@
       <option name="presentableId" value="Default" />
       <updated>1732021854814</updated>
       <workItem from="1732021855732" duration="2380000" />
-      <workItem from="1732024296404" duration="11649000" />
+      <workItem from="1732024296404" duration="11681000" />
+      <workItem from="1732283173903" duration="5082000" />
     </task>
+    <task id="LOCAL-00001" summary="spring">
+      <option name="closed" value="true" />
+      <created>1732200162259</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1732200162259</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,6 +219,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="spring" />
+    <option name="LAST_COMMIT_MESSAGE" value="spring" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

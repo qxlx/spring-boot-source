@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Import;
  * @date 2024/11/18 21:56
  */
 @Configuration
-@ComponentScan(basePackages = "org.qxlx.application")
+@ComponentScan(basePackages = "com.qxlx.application")
 //@Import(Person.class)
 @Import(MyImportSelector.class)
 public class AppConfig {
